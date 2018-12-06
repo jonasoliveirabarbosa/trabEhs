@@ -1,0 +1,11 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}New Exemplar{% endblock %}
+
+{% block content %}
+    <h1>Create new Exemplar</h1>
+
+    {{ include('exemplar/_form.html.twig') }}
+
+    <a href="{{ path('exemplar_index') }}">back to list</a>
+{% endblock %}

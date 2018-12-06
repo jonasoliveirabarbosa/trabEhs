@@ -149,4 +149,9 @@ class Exemplar
 
         return $this;
     }
+
+    public function __toString()
+    {
+        return $this->livro->getTitulo(). ' edição '. $this->edicao. ' '. $this->ano;
+    }
 }

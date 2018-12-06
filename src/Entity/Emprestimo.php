@@ -107,4 +107,9 @@ class Emprestimo
 
         return $this;
     }
+
+    public function __toString()
+    {
+        return $this->exemplar->getNome().' '. $this->inicio->format('d/m/Y H:i:s') .' '. $this->fim->format('d/m/Y H:i:s');
+    }
 }

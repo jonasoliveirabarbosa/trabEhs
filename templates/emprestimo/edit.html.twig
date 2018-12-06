@@ -1,0 +1,13 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Edit Emprestimo{% endblock %}
+
+{% block content %}
+    <h1>Edit Emprestimo</h1>
+
+    {{ include('emprestimo/_form.html.twig', {'button_label': 'Update'}) }}
+
+    <a href="{{ path('emprestimo_index') }}">back to list</a>
+
+    {{ include('emprestimo/_delete_form.html.twig') }}
+{% endblock %}

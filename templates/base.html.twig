@@ -28,7 +28,7 @@
         <!-- ============================================================== -->
         <div class="dashboard-header">
             <nav class="navbar navbar-expand-lg bg-white fixed-top">
-                <a class="navbar-brand" href="../index.html">LivroLend</a>
+                <a class="navbar-brand" href="{{ url('defaut') }}">LivroLend</a>
                 <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
                     <span class="navbar-toggler-icon"></span>
                 </button>
@@ -49,7 +49,7 @@
         <div class="nav-left-sidebar sidebar-dark">
             <div class="menu-list">
                 <nav class="navbar navbar-expand-lg navbar-light">
-                    <a class="d-xl-none d-lg-none" href="#">Dashboard</a>
+                    <a class="d-xl-none d-lg-none" href="{{ url('defaut') }}">Dashboard</a>
                     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
                         <span class="navbar-toggler-icon"></span>
                     </button>
@@ -63,18 +63,18 @@
                                 <div id="submenu-1" class="collapse submenu" style="">
                                     <ul class="nav flex-column">
                                         <li class="nav-item">
-                                            <a class="nav-link" href="../dashboard-finance.html">Pesquisar por livro</a>
+                                            <a class="nav-link" href="{{url('livro_index')}}">Pesquisar por livro</a>
                                         </li>
                                         <li class="nav-item">
-                                            <a class="nav-link" href="../dashboard-sales.html">Adicionar livro</a>
+                                            <a class="nav-link" href="{{url('livro_new')}}">Adicionar livro</a>
                                         </li>
                                         <li class="nav-item">
-                                            <a class="nav-link" href="../dashboard-sales.html">Remover livro</a>
+                                            <a class="nav-link" href="{{url('exemplar_index')}}">Pesquisar por Exemplar</a>
                                         </li>
                                         <li class="nav-item">
-                                            <a class="nav-link" href="../dashboard-sales.html">Atualizar livro</a>
+                                            <a class="nav-link" href="{{url('exemplar_new')}}">Adicionar Exemplar</a>
                                         </li>
-                                        </ul>
+                                    </ul>
                                 </div>
                             </li>
                             <li class="nav-item">
@@ -82,28 +82,28 @@
                                 <div id="submenu-2" class="collapse submenu" style="">
                                     <ul class="nav flex-column">
                                         <li class="nav-item">
-                                            <a class="nav-link" href="general.html">Pesquisar por cliente</a>
+                                            <a class="nav-link" href="{{url('cliente_index')}}">Pesquisar por cliente</a>
                                         </li>
                                         <li class="nav-item">
-                                            <a class="nav-link" href="carousel.html">Adicionar cliente</a>
-                                        </li>
-                                        <li class="nav-item">
-                                            <a class="nav-link" href="listgroup.html">Remover cliente</a>
-                                        </li>
-                                        <li class="nav-item">
-                                            <a class="nav-link" href="typography.html">Atualizar Cliente</a>
+                                            <a class="nav-link" href="{{url('cliente_new')}}">Adicionar cliente</a>
                                         </li>
                                     </ul>
                                 </div>
                             </li>
-
-                            <a class="nav-link active" href="#" aria-expanded="false" data-target="#submenu-3" aria-controls="submenu-3"><i class="fa fa-fw fa-bookmark"></i>Empréstimo de livro<span class="badge badge-success"></span></a>
-
-                        </li>
-
-
-
-                    </ul>
+                            <li class="nav-item">
+                                <a class="nav-link" href="#" data-toggle="collapse" aria-expanded="false" data-target="#submenu-3" aria-controls="submenu-3"><i class="fa fa-fw fa-bookmark"></i>Empréstimo de livro<span class="badge badge-success"></span></a>
+                                <div id="submenu-3" class="collapse submenu" style="">
+                                    <ul class="nav flex-column">
+                                        <li class="nav-item">
+                                            <a class="nav-link" href="{{url('emprestimo_index')}}">Pesquisar por Emprestimo</a>
+                                        </li>
+                                        <li class="nav-item">
+                                            <a class="nav-link" href="{{url('emprestimo_new')}}">Adicionar Emprestimo</a>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </li>
+                        </ul>
                 </div>
             </nav>
         </div>
@@ -125,14 +125,7 @@
             <div class="container-fluid">
                 <div class="row">
                     <div class="col-xl-6 col-lg-6 col-md-12 col-sm-12 col-12">
-                        Copyright © 2018 Concept. All rights reserved. Dashboard by <a href="https://colorlib.com/wp/">Colorlib</a>.
-                    </div>
-                    <div class="col-xl-6 col-lg-6 col-md-12 col-sm-12 col-12">
-                        <div class="text-md-right footer-links d-none d-sm-block">
-                            <a href="javascript: void(0);">About</a>
-                            <a href="javascript: void(0);">Support</a>
-                            <a href="javascript: void(0);">Contact Us</a>
-                        </div>
+                        Copyright © 2018 Trabalho de Engenharia de Sistemas de Informação
                     </div>
                 </div>
             </div>
