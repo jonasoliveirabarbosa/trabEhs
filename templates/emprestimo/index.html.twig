@@ -3,37 +3,49 @@
 {% block title %}Emprestimo index{% endblock %}
 
 {% block content %}
-    <h1>Emprestimo index</h1>
-
-    <table class="table">
-        <thead>
-            <tr>
-                <th>Id</th>
-                <th>Inicio</th>
-                <th>Fim</th>
-                <th>Ativo</th>
-                <th>actions</th>
-            </tr>
-        </thead>
-        <tbody>
-        {% for emprestimo in emprestimos %}
-            <tr>
-                <td>{{ emprestimo.id }}</td>
-                <td>{{ emprestimo.inicio ? emprestimo.inicio|date('Y-m-d H:i:s') : '' }}</td>
-                <td>{{ emprestimo.fim ? emprestimo.fim|date('Y-m-d H:i:s') : '' }}</td>
-                <td>{{ emprestimo.ativo ? 'Yes' : 'No' }}</td>
-                <td>
-                    <a href="{{ path('emprestimo_show', {'id': emprestimo.id}) }}">show</a>
-                    <a href="{{ path('emprestimo_edit', {'id': emprestimo.id}) }}">edit</a>
-                </td>
-            </tr>
-        {% else %}
-            <tr>
-                <td colspan="5">no records found</td>
-            </tr>
-        {% endfor %}
-        </tbody>
-    </table>
-
-    <a href="{{ path('emprestimo_new') }}">Create new</a>
+<div class="row">
+    <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12">
+        <div class="page-header" id="top">
+            <h2 class="pageheader-title">Listagem de Emprestimos</h2>
+        </div>
+    </div>
+</div>
+<div class="row">
+    <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12">
+        <div class="card">
+            <div class="card-body">
+                <table class="table">
+                    <thead>
+                        <tr>
+                            <th>Id</th>
+                            <th>Inicio</th>
+                            <th>Fim</th>
+                            <th>Ativo</th>
+                            <th>actions</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                    {% for emprestimo in emprestimos %}
+                        <tr>
+                            <td>{{ emprestimo.id }}</td>
+                            <td>{{ emprestimo.inicio ? emprestimo.inicio|date('d/m/Y H:i:s') : '' }}</td>
+                            <td>{{ emprestimo.fim ? emprestimo.fim|date('d/m/Y H:i:s') : '' }}</td>
+                            <td>{{ emprestimo.ativo ? 'Yes' : 'No' }}</td>
+                            <td>
+                                <a href="{{ path('emprestimo_show', {'id': emprestimo.id}) }}">show</a>
+                                <a href="{{ path('emprestimo_edit', {'id': emprestimo.id}) }}">edit</a>
+                            </td>
+                        </tr>
+                    {% else %}
+                        <tr>
+                            <td colspan="5">no records found</td>
+                        </tr>
+                    {% endfor %}
+                    </tbody>
+                </table>
+                <a class="card-link" href="{{ path('emprestimo_new') }}">Criar Novo</a>
+            </div>
+        </div>
+    </div>
+</div>
 {% endblock %}

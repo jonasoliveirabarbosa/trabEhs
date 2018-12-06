@@ -13,7 +13,9 @@ class ClienteType extends AbstractType
     {
         $builder
             ->add('nome')
-            ->add('ativo')
+            ->add('ativo', null, [
+                'label' => 'Cliente ativo ?',
+            ])
         ;
     }
 

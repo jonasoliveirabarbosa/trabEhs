@@ -3,39 +3,51 @@
 {% block title %}Livro index{% endblock %}
 
 {% block content %}
-    <h1>Livro index</h1>
-
-    <table class="table">
-        <thead>
-            <tr>
-                <th>Id</th>
-                <th>Genero</th>
-                <th>Titulo</th>
-                <th>Editora</th>
-                <th>Autor</th>
-                <th>actions</th>
-            </tr>
-        </thead>
-        <tbody>
-        {% for livro in livros %}
-            <tr>
-                <td>{{ livro.id }}</td>
-                <td>{{ livro.genero }}</td>
-                <td>{{ livro.titulo }}</td>
-                <td>{{ livro.editora }}</td>
-                <td>{{ livro.autor }}</td>
-                <td>
-                    <a href="{{ path('livro_show', {'id': livro.id}) }}">show</a>
-                    <a href="{{ path('livro_edit', {'id': livro.id}) }}">edit</a>
-                </td>
-            </tr>
-        {% else %}
-            <tr>
-                <td colspan="6">no records found</td>
-            </tr>
-        {% endfor %}
-        </tbody>
-    </table>
-
-    <a href="{{ path('livro_new') }}">Create new</a>
+    <div class="row">
+        <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12">
+            <div class="page-header" id="top">
+                <h2 class="pageheader-title">Listagem de Livros</h2>
+            </div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12">
+            <div class="card">
+                <div class="card-body">
+                    <table class="table">
+                        <thead>
+                            <tr>
+                                <th>Id</th>
+                                <th>Genero</th>
+                                <th>Titulo</th>
+                                <th>Editora</th>
+                                <th>Autor</th>
+                                <th>actions</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            {% for livro in livros %}
+                                <tr>
+                                    <td>{{ livro.id }}</td>
+                                    <td>{{ livro.genero }}</td>
+                                    <td>{{ livro.titulo }}</td>
+                                    <td>{{ livro.editora }}</td>
+                                    <td>{{ livro.autor }}</td>
+                                    <td>
+                                        <a href="{{ path('livro_show', {'id': livro.id}) }}">show</a>
+                                        <a href="{{ path('livro_edit', {'id': livro.id}) }}">edit</a>
+                                    </td>
+                                </tr>
+                            {% else %}
+                                <tr>
+                                    <td colspan="6">no records found</td>
+                                </tr>
+                            {% endfor %}
+                        </tbody>
+                    </table>
+                    <a class="card-link" href="{{ path('livro_new') }}">Criar Novo</a>
+                </div>
+            </div>
+        </div>
+    </div>
 {% endblock %}

@@ -3,9 +3,21 @@
 {% block title %}New Cliente{% endblock %}
 
 {% block content %}
-    <h1>Create new Cliente</h1>
-
-    {{ include('cliente/_form.html.twig') }}
-
-    <a href="{{ path('cliente_index') }}">back to list</a>
+    <div class="row">
+        <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12">
+            <div class="page-header" id="top">
+                <h2 class="pageheader-title">Criar Novo Cliente </h2>
+            </div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12">
+            <div class="card">
+                <div class="card-body">
+                    {{ include('cliente/_form.html.twig') }}
+                    <a href="{{ path('cliente_index') }}"  class="card-link">voltar para a listagem</a>
+                </div>
+            </div>
+        </div>
+    </div>
 {% endblock %}

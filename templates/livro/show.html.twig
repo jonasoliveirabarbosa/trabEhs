@@ -3,36 +3,49 @@
 {% block title %}Livro{% endblock %}
 
 {% block content %}
-    <h1>Livro</h1>
+    <div class="row">
+        <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12">
+            <div class="page-header" id="top">
+                <h2 class="pageheader-title">Livro</h2>
+            </div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12">
+            <div class="card">
+                <div class="card-body">
+                    <table class="table">
+                        <tbody>
+                            <tr>
+                                <th>Id</th>
+                                <td>{{ livro.id }}</td>
+                            </tr>
+                            <tr>
+                                <th>Genero</th>
+                                <td>{{ livro.genero }}</td>
+                            </tr>
+                            <tr>
+                                <th>Titulo</th>
+                                <td>{{ livro.titulo }}</td>
+                            </tr>
+                            <tr>
+                                <th>Editora</th>
+                                <td>{{ livro.editora }}</td>
+                            </tr>
+                            <tr>
+                                <th>Autor</th>
+                                <td>{{ livro.autor }}</td>
+                            </tr>
+                        </tbody>
+                    </table>
 
-    <table class="table">
-        <tbody>
-            <tr>
-                <th>Id</th>
-                <td>{{ livro.id }}</td>
-            </tr>
-            <tr>
-                <th>Genero</th>
-                <td>{{ livro.genero }}</td>
-            </tr>
-            <tr>
-                <th>Titulo</th>
-                <td>{{ livro.titulo }}</td>
-            </tr>
-            <tr>
-                <th>Editora</th>
-                <td>{{ livro.editora }}</td>
-            </tr>
-            <tr>
-                <th>Autor</th>
-                <td>{{ livro.autor }}</td>
-            </tr>
-        </tbody>
-    </table>
+                    <a href="{{ path('livro_index') }}">voltar a listagem</a>
 
-    <a href="{{ path('livro_index') }}">back to list</a>
+                    <a href="{{ path('livro_edit', {'id': livro.id}) }}">editar</a>
 
-    <a href="{{ path('livro_edit', {'id': livro.id}) }}">edit</a>
-
-    {{ include('livro/_delete_form.html.twig') }}
+                    {{ include('livro/_delete_form.html.twig') }}
+                </div>
+            </div>
+        </div>
+    </div>
 {% endblock %}
