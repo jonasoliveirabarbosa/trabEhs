@@ -18,6 +18,7 @@
                     <thead>
                         <tr>
                             <th>Id</th>
+                            <th>Livro</th>
                             <th>Edicao</th>
                             <th>Ano</th>
                             <th>Ativo</th>
@@ -29,6 +30,7 @@
                     {% for exemplar in exemplars %}
                         <tr>
                             <td>{{ exemplar.id }}</td>
+                            <td>{{ exemplar.livro }}</td>
                             <td>{{ exemplar.edicao }}</td>
                             <td>{{ exemplar.ano }}</td>
                             <td>{{ exemplar.ativo ? 'Yes' : 'No' }}</td>

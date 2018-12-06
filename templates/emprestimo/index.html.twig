@@ -18,6 +18,8 @@
                     <thead>
                         <tr>
                             <th>Id</th>
+                            <th>Livro</th>
+                            <th>Usuario</th>
                             <th>Inicio</th>
                             <th>Fim</th>
                             <th>Ativo</th>
@@ -28,9 +30,11 @@
                     {% for emprestimo in emprestimos %}
                         <tr>
                             <td>{{ emprestimo.id }}</td>
+                            <td>{{ emprestimo.exemplar.livro }}</td>
+                            <td>{{ emprestimo.cliente }}</td>
                             <td>{{ emprestimo.inicio ? emprestimo.inicio|date('d/m/Y H:i:s') : '' }}</td>
                             <td>{{ emprestimo.fim ? emprestimo.fim|date('d/m/Y H:i:s') : '' }}</td>
-                            <td>{{ emprestimo.ativo ? 'Yes' : 'No' }}</td>
+                            <td>{{ emprestimo.ativo ? 'Sim' : 'Não' }}</td>
                             <td>
                                 <a href="{{ path('emprestimo_show', {'id': emprestimo.id}) }}">show</a>
                                 <a href="{{ path('emprestimo_edit', {'id': emprestimo.id}) }}">edit</a>
